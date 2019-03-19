@@ -15,6 +15,12 @@ Page({
       url: '../logs/logs'
     })
   },
+  bindViewTapTest: function () {
+    wx.navigateTo({
+      url: '../test1/test1'
+    })
+  },
+
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
