@@ -1,3 +1,9 @@
 <!--pages/test1/test1.wxml-->
 
-<text>pages/test1/test1.wxml</text>
+<!--<text>pages/test1/test1.wxml</text>-->
+<!--<web-view src="https://www.baidu.com/"></web-view>-->
+ <button loading="{{loading}}"  type="default" hover-class="hover" bindtap="tap"> 点击button </button>
+ <button type="default" hover-class="hover" bindtap="tap2"> 发送请求 </button>
+ <button type="default" hover-class="hover" bindtap="tapScan"> tapScan </button>
+
+<view hover-class="hover"> 点击view</view>

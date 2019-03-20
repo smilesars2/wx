@@ -1,13 +1,28 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const util = require('../../utils/util.js')
 
 Page({
+  onShareAppMessage: function () {
+    return {
+      title: '自定义转发标题',
+      path: '/page/user?id=123'
+    }
+  },
   data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo') && wx.canIUse('button.open-type.contact'),
+    time: util.formatTime(new Date()), 
+    length: 2,
+    item: {
+      index: 0,
+      msg: 'this is a template',
+      time: '2016-06-18',
+      bz: 'test'
+    }
   },
   //事件处理函数
   bindViewTap: function() {
@@ -17,7 +32,8 @@ Page({
   },
   bindViewTapTest: function () {
     wx.navigateTo({
-      url: '../test1/test1'
+      //url: '../test1/test1'
+      url: '../list/list?id=1&other=abc'
     })
   },
 
