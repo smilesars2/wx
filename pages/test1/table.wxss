@@ -1,0 +1,9 @@
+/* pages/test1/table.wxss */
+.page-section{
+  margin-bottom: 20rpx;
+}
+.flex-wrp {display: flex;}
+.bc_green {background: green;width:100px; height: 100px;}
+.bc_red {background: red;width:100px; height: 100px;}
+.bc_blue {background: rgba(191, 191, 218, 0.432);width:100px; height: 100px;}
+.cell {width:100px; }

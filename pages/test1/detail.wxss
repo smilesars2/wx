@@ -1,0 +1,2 @@
+/* pages/test1/detail.wxss */
+.readonly {background-color: lightgray}

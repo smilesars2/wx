@@ -1,0 +1,40 @@
+<!--pages/test1/table2.wxml-->
+<view class="table">
+ <view class="tr bg-w">
+ <checkbox disabled="true"></checkbox>
+  <view class="th">订单编号</view>
+  <view class="th">商品名称</view>
+  <view class="th ">金额</view>
+  <view class="th">订单日期</view>
+   <view class="th ">收货地址</view> 
+   <view class="th ">备注</view>
+ </view>
+ <block wx:for="{{listData}}" wx:key="{[code]}">
+ <checkbox-group id ="t1"  bindchange="checkboxChange">
+  <view class="tr" wx:if="{{index % 2 == 0}}">
+  <checkbox id="c{{index}}" class='c'  value="{{index}}"></checkbox>
+   <view class="td">{{item.code}}</view>
+   <view class="td">{{item.text}}</view>
+   <view class="td">{{item.je}}</view>
+   <view class="td">{{item.date}}</view>
+   <view class="td">{{item.address}}</view>
+   <view class="td">{{item.bz}}</view>
+  </view>
+  <view class="tr" wx:else>
+  <checkbox id="c{{index}}" class='c'  value="{{index}}"></checkbox>
+     <view class="td">{{item.code}}</view>
+   <view class="td">{{item.text}}</view>
+   <view class="td">{{item.je}}</view>
+   <view class="td">{{item.date}}</view>
+   <view class="td">{{item.address}}</view>
+   <view class="td">{{item.bz}}</view>
+  </view>
+  </checkbox-group>
+ </block>
+</view>
+
+<button class="weui-btn mini-btn" type="primary" size="mini" style="margin:0px 10px"  bindtap="tapAdd">添加</button>
+<button class="weui-btn mini-btn" type="default" size="mini" style="margin:0px 10px" bindtap="tapEdit">编辑</button>
+<button class="weui-btn mini-btn" type="default" size="mini" style="margin:0px 10px" bindtap="tapDelete">删除</button>
+<button class="weui-btn mini-btn" type="default" size="mini" style="margin:0px 10px">查找</button>
+<button class="weui-btn mini-btn" type="default" size="mini" style="margin:0px 10px" bindtap="tapRefresh">刷新</button>

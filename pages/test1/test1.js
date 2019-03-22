@@ -1,4 +1,6 @@
 // pages/test1/test1.js
+const util = require('../../utils/util.js')
+
 Page({
   onPullDownRefresh() {
     console.log('pushed');
@@ -67,7 +69,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    wx.navigateTo({
+      url: 'table2'
+    })
   },
 
   /**
@@ -120,13 +124,99 @@ Page({
     })
 
   },
+  tapMap: function () {
+
+    // 调用wx.login获取微信登录凭证
+    wx.getLocation({
+      type: 'gcj02',
+      success: function (res) {
+        //data.latitude = res.latitude
+        //data.longtitude =res.longitude  
+        //this.setData({ latitude: res.latitude });
+ 
+        //wx.showToast({
+        //  title: res.latitude + ',' + res.longitude,
+        //})
+
+        console.log(res);
+
+        wx.navigateTo({ 
+          url: 'test2?latitude=' + res.latitude + '&longtitude=' + res.longitude,
+          //data: { latitude: 30, longitude: 108}
+          //data: { latitude: res.latitude, longitude: res.longitude}
+        })
+      },
+    })
+
+   
+  },
+  tapBluetooth:function(){
+      console.log('开始获取蓝牙信息...');
+      wx.getBluetoothAdapterState({
+        success: function(res) {
+          console.log(res);
+        },
+      })
+  },
+  tapDetail:function(){
+    wx.navigateTo({
+      url: 'detail'  
+    })
+  },
+  tapTable: function () {
+    wx.navigateTo({
+      url: 'table2' 
+    })
+  },
+  formSubmit:function(e){ 
+    console.log(e)
+    console.log(e.detail.formId)
+
+    var keyword=[];
+    keyword.push(1);
+    keyword.push(2);
+    keyword.push(3);
+    keyword.push(4);
+    keyword.push(5);
+    keyword.push(6);
+
+    wx.request({
+      url: 'https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=19_AVDUKM3saihuwbvYzHXLjcNZNiBUKi1etLRhQ7mc19X0M4pnEtbrGxAPCRY__eK9Yys496WfcgP6wY-EKQmlQkykHQ2fWVgbF1MQQS-h8godOTroGw1W_tyCvz7wPHzl1LaxsfNBnH19ZRX_LNLhABAEGE',
+      method:'POST',
+      data: {              
+        touser:'oqSXI5RPznFnTh_L2sqTgbltsH-8',
+        template_id:'OFQYAhZmjP35WrW_cRMBbtDdc1ANfslMv5vrGK1ca08',
+        form_id: e.detail.formId,
+        data: { "keyword1": { "value": "订单111111" }, 
+                   "keyword2": { "value": "西瓜" }, 
+                   "keyword3": { "value": "100.00"  }, 
+                   "keyword4": { "value": "XX软件园"}, 
+                   "keyword5": { "value": "GOOD" }, 
+                   "keyword6": { "value": util.formatTime(new Date()),  }, 
+                   } 
+        //keyword1: '1', 
+        //keyword2: '2', 
+        //keyword3: '3', 
+        //keyword4: '4', 
+        //keyword5: '5', 
+        //keyword6: '6'
+        //emphasis_keyword:'keyword1.DATA'
+      },  
+    success(res){
+        console.log(res.data)
+      } ,
+      fail(res){
+        console.log(res.data)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
 
   },
-
+  launchAppError:function(){},
   /**
    * 生命周期函数--监听页面隐藏
    */

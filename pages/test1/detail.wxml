@@ -1,0 +1,87 @@
+<!--pages/test1/detail.wxml
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section">
+  <view class="section__title">订单编号</view>
+    <input name="input1" value='111111' placeholder="please input here" />
+
+     <view class="section__title">商品名称</view>
+    <input name="input2" value='西瓜' placeholder="please input here" />
+
+    <view class="section__title">金额</view>
+    <input name="input3" value='100' placeholder="please input here" />
+
+    <view class="section__title">收货地址</view>
+    <input name="input4" value='XX软件园' placeholder="please input here" />
+
+    <view class="section__title">备注</view>
+    <input name="input5" value='GOOD' placeholder="please input here" />
+</view>
+
+  <view class="btn-area">
+    <button form-type="submit">Submit</button>
+    <button form-type="reset">Reset</button>
+  </view>
+</form>-->
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="weui-cells__title">表单</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订单号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="input1" disabled='{{type}}' class='{{type?"weui-input readonly":"weui-input"}}' value="{{cdata.code}}" placeholder="请输入订单号"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input weui-cell_vcode">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">商品名称</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="input2" class="weui-input"  value="{{cdata.text}}" placeholder="请输入商品名称" />
+                </view>
+                <!--<view class="weui-cell__ft">
+                    <view class="weui-vcode-btn">获取验证码</view>
+                </view>-->
+            </view>
+            <view class="weui-cell weui-cell_input weui-cell_vcode">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订单金额</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input  name="input3" class="weui-input" type="digit" value="{{cdata.je}}" placeholder="请输入订单金额" />
+                </view> 
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订单日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker  name="input4" mode="date" value="{{cdata.date}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange">
+                        <view class="weui-input">{{date}}</view>
+                    </picker>
+                </view>
+            </view> 
+            <view class="weui-cell weui-cell_input weui-cell_vcode">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">收货地址</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input  name="input5" class="weui-input" value="{{cdata.address}}" placeholder="请输入收货地址" />
+                </view> 
+            </view>
+              <view class="weui-cell weui-cell_input weui-cell_vcode">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">备注</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="input6" class="weui-input" value="{{cdata.bz}}" placeholder="请输入备注" />
+                </view> 
+            </view>
+        </view>
+         
+    <button class='weui-btn' form-type="submit" type="primary">提交</button>
+    <button class='weui-btn' form-type="reset" >重置</button> 
+        <view class="weui-cells__tips">底部说明文字底部说明文字</view>
+</form>

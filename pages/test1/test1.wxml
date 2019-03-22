@@ -1,9 +1,36 @@
 <!--pages/test1/test1.wxml-->
-
+  <button type="default"  bindtap="tapTable"> tapTable </button>
+ 
 <!--<text>pages/test1/test1.wxml</text>-->
-<!--<web-view src="https://www.baidu.com/"></web-view>-->
+ <!--<web-view src="http://127.0.0.1:9973/appservice/appservice"></web-view> 
  <button loading="{{loading}}"  type="default" hover-class="hover" bindtap="tap"> 点击button </button>
  <button type="default" hover-class="hover" bindtap="tap2"> 发送请求 </button>
  <button type="default" hover-class="hover" bindtap="tapScan"> tapScan </button>
-
+ <button type="default" hover-class="hover" bindtap="tapMap"> tapMap </button>
+ <button type="default" hover-class="hover" bindtap="tapBluetooth"> tapBluetooth </button>
+ <button type="default" open-type='share' hover-class="hover"  > tapShare </button>
+ <button type="default"  bindtap="tapDetail"> tapDetail </button>
+ <!--<button   open-type='launchApp' app-parameter="wechat"  binderror="launchAppError"> tapBaiduNetdisk </button>
+ <form id="formOrder" bindsubmit="formSubmit" bindreset="formReset" report-submit='true'>
+  <view class="section section_gap">
+    <view class="section__title">checkbox</view>
+    <checkbox-group name="checkbox">
+      <label>
+        <checkbox value="checkbox1" />
+        checkbox1
+      </label>
+      <label>
+        <checkbox value="checkbox2" />
+        checkbox2
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="btn-area">
+    <button form-type="submit">Submit</button>
+    <button form-type="reset">Reset</button>
+  </view>
+</form>
 <view hover-class="hover"> 点击view</view>
+ -->
+
+ 

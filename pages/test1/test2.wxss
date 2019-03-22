@@ -1,0 +1,2 @@
+/* pages/test1/test2.wxss */
+@import 'test1.wxss'

@@ -1,38 +1,52 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/test1/test1",
-    "pages/list/list"
+    "pages/index/index",
+    "pages/logs/logs", 
+    "pages/list/list",
+    "pages/test1/test2",
+    "pages/test1/detail",
+    "pages/test1/table",
+    "pages/test1/table2"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#93e759",
     "navigationBarTitleText": "MiniProgram",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh":true 
-  }, 
+    "enablePullDownRefresh": true,
+    "pageOrientation": "auto"
+  },
   "networkTimeout": {
     "request": 3000
   },
   "tabBar": {
+    "position": "bottom",
     "list": [
       {
-        "text": "主页", 
+        "text": "主页",
         "pagePath": "pages/index/index"
       },
       {
         "text": "日志",
+        "iconPath": "pages/image/icon_component.png",
+        "selectedIconPath": "pages/image/icon_component_HL.png",
         "pagePath": "pages/logs/logs"
       },
       {
         "text": "测试1",
+        "iconPath": "pages/image/icon_API.png",
+        "selectedIconPath": "pages/image/icon_API_HL.png",
         "pagePath": "pages/test1/test1"
-      }
-      ,
+      },
       {
         "text": "Switch",
-        "iconPath":"pages/image/1.png",
+        "iconPath": "pages/image/1.png",
         "pagePath": "pages/list/list"
       }
     ]

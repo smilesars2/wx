@@ -1,0 +1,14 @@
+<!--pages/test1/test2.wxml-->
+<!--<map latitude="{{latitude}}" longtitude="{{longtitude}}"  style="width: 100%; height: 800px;"></map>-->
+
+
+<map
+    id="myMap"
+    style='width: 100%; height: 800px;'
+    longitude='{{longtitude}}'
+    latitude='{{latitude}}'
+    scale='16'
+    subkey='M3GBZ-C5GCO-4TTWX-SRGJY-O2IST-4VBPG'
+    show-location
+    >
+</map>

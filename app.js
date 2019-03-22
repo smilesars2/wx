@@ -35,6 +35,11 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    listData: [{ "code": "120", "text": "70", "je": "100", "address": "test1", "date": "2018年4月19日", "bz": "备注1" },
+      { "code": "125", "text": "74", "je": "200", "address": "test1", "date": "2018年4月17日", "bz": "备注2" },
+
+      { "code": "119", "text": "76", "je": "100", "address": "test1", "date": "2018年4月16日", "bz": "备注3" },
+      { "code": "117", "text": "78", "je": "100", "address": "test1", "date": "2018年4月15日", "bz": "备注4" }]
   }
 })
